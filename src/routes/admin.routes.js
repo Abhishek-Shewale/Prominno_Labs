@@ -7,10 +7,10 @@ const validate = require('../middlewares/validate.middleware');
 const { login, loginSchema } = require('../controllers/admin/auth.controller');
 const { createSeller, createSellerSchema, listSellers } = require('../controllers/admin/seller.controller');
 
-// Public routes
+
 router.post('/login', validate(loginSchema), login);
 
-// Protected routes (Admin only)
+
 router.use(authMiddleware);
 router.use(requireRole('admin'));
 

@@ -1,6 +1,4 @@
-/**
- * Success response wrapper
- */
+
 exports.successResponse = (res, statusCode, message, data = null) => {
     const response = {
         success: true,
@@ -12,9 +10,7 @@ exports.successResponse = (res, statusCode, message, data = null) => {
     return res.status(statusCode).json(response);
 };
 
-/**
- * Error response wrapper
- */
+
 exports.errorResponse = (res, statusCode, message, errors = null) => {
     const response = {
         success: false,

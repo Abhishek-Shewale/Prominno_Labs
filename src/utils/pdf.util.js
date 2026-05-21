@@ -29,13 +29,8 @@ const generateProductPDF = (product, res) => {
         doc.fontSize(14).font('Helvetica-Bold').text(`${index + 1}. ${brand.brandName}`);
         doc.fontSize(12).font('Helvetica').text(`Detail: ${brand.detail}`);
         doc.text(`Price: $${brand.price}`);
-        
-        // Note: For actual image rendering, we would need to check if the file exists locally
-        // and add it using doc.image(brand.image, ...). However, since we are returning URL strings
-        // or path strings that might not be easily accessible synchronously for pdfkit, we'll
-        // display the image path/url for now, or you'd fetch it/read it from disk.
         doc.text(`Image: ${brand.image}`);
-        
+
         doc.moveDown();
     });
 
